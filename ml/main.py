@@ -1,16 +1,15 @@
-# This is a sample Python script.
+import torch
+from ml.my_neuron_system import MyNeuronSystem
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def main():
+    i = 5
 
+    while i <= 10:
+        model = MyNeuronSystem(i)
+        x = torch.randn(1, i)
+        output = model(x)
+        print(f"Input dim: {i}, Output: {output}")
+        i += 1
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if __name__ == "__main__":
+    main()
